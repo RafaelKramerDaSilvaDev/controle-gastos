@@ -1,3 +1,5 @@
+import { Form } from './components/Form';
+
 export function Main() {
 	return (
 		<div>
@@ -17,12 +19,7 @@ export function Main() {
 						<p>R$200,00</p>
 						<p>R$150,00</p>
 						<input type='text' />
-						<button>Adicionar Renda</button>
-						<label htmlFor=''>Gasto</label>
-						<input type='text' />
-						<button>Adicionar Gasto</button>
-						<br />
-						<button>Simular</button>
+						<Form />
 					</div>
 					<div>
 						<div
