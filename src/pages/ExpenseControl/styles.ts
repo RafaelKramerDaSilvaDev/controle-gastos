@@ -7,6 +7,7 @@ export const CurrencyTableContainer = styled.div`
 	background-color: white;
 	margin: 24px;
 	padding: 16px;
+	column-gap: 16px;
 `;
 
 export const SimulationContainer = styled.div`
