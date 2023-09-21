@@ -1,11 +1,16 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { Main } from './pages/Main';
+import { GlobalStyle } from './app/styles/GlobalStyle';
+import { ExpenseControl } from './pages/ExpenseControl';
+import { ExpenseControlProvider } from './pages/ExpenseControl/contexts/ExpenseControlContext';
 
 function App() {
 	return (
-		<ChakraProvider>
-			<Main />
-		</ChakraProvider>
+		<ExpenseControlProvider>
+			<ChakraProvider>
+				<ExpenseControl />
+				<GlobalStyle />
+			</ChakraProvider>
+		</ExpenseControlProvider>
 	);
 }
 
