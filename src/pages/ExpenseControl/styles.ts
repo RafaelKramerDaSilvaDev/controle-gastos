@@ -2,14 +2,6 @@ import styled from 'styled-components';
 
 export const ExpenseControlContainer = styled.div``;
 
-export const CurrencyTableContainer = styled.div`
-	display: flex;
-	background-color: white;
-	margin: 24px;
-	padding: 16px;
-	column-gap: 16px;
-`;
-
 export const SimulationContainer = styled.div`
 	display: flex;
 	background-color: #f0f0f0;

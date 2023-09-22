@@ -5,6 +5,7 @@ export const FormContainer = styled.div`
 	padding: 16px;
 	border-radius: 2px;
 	background-color: white;
+	width: 400px;
 `;
 
 export const Title = styled.div`
