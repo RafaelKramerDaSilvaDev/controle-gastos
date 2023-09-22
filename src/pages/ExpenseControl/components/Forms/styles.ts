@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FormContainer = styled.div`
 	margin: 24px;
-	padding: 16px;
+	padding: 24px;
 	border-radius: 2px;
 	background-color: white;
 	width: 400px;

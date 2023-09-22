@@ -1,4 +1,13 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react';
+import {
+	Button,
+	FormControl,
+	FormErrorMessage,
+	FormLabel,
+	Input,
+	InputGroup,
+	InputLeftElement,
+	Stack,
+} from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
@@ -17,7 +26,7 @@ export function MonetaryValuesEntryForm() {
 		register,
 		handleSubmit,
 		reset,
-		// formState: { errors },
+		formState: { errors },
 	} = useForm<FormData>({
 		resolver: yupResolver(schema),
 	});
@@ -30,26 +39,26 @@ export function MonetaryValuesEntryForm() {
 			value: data.monetaryValueEntry,
 			description: data.description || '',
 		};
-
 		setMonetaryValuesEntry((prevValues) => [...prevValues, newEntry]);
-
 		reset();
 	}
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmit)} noValidate>
 			<Stack>
-				<FormControl isRequired>
+				<FormControl>
+					<FormLabel>Descrição</FormLabel>
+					<Input type='text' placeholder='Descrição uma descrição' {...register('description')} />
+				</FormControl>
+				<FormControl isRequired isInvalid={!!errors.monetaryValueEntry}>
 					<FormLabel>Renda</FormLabel>
 					<InputGroup>
 						<InputLeftElement pointerEvents='none' color='gray.300' fontSize='1.2em' children='$' />
-						<Input type='number' placeholder='Digite uma entrada' {...register('monetaryValueEntry')} />
+						<Input type='number' placeholder='Digite um valor de renda' {...register('monetaryValueEntry')} />
 					</InputGroup>
+					{errors.monetaryValueEntry && <FormErrorMessage>Campo Renda é obrigatório.</FormErrorMessage>}
 				</FormControl>
-				<FormControl>
-					<FormLabel>Descrição</FormLabel>
-					<Input placeholder='Descrição da entrada' {...register('description')} />
-				</FormControl>
+
 				<Button type='submit'>Registrar</Button>
 			</Stack>
 		</form>
