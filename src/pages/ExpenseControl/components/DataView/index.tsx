@@ -1,4 +1,3 @@
-import { BorderBox } from '../../../../app/shared/BorderBox';
 import { formatCurrency } from '../../../../utils/formatCurrency';
 import { useExpenseControl } from '../../contexts/ExpenseControlContext';
 import { DataViewContainer, Message } from './styles';
@@ -20,11 +19,9 @@ export function DataView() {
 
 	return (
 		<DataViewContainer>
-			<BorderBox>
-				<Message>
-					Saldo {positiveOrNegativeBalance()} de {formatCurrency(balance)}.
-				</Message>
-			</BorderBox>
+			<Message>
+				Saldo {positiveOrNegativeBalance()} de {formatCurrency(balance)}.
+			</Message>
 		</DataViewContainer>
 	);
 }
