@@ -4,7 +4,8 @@ export const CurrencyTableContainer = styled.div`
 	border-width: 1px;
 	border-radius: 8px;
 	padding: 24px;
-	width: 100%;
+	width: 400px;
+	min-width: min-content;
 `;
 
 export const Title = styled.h1`

@@ -6,6 +6,7 @@ export const FormContainer = styled.div`
 	border-radius: 2px;
 	background-color: white;
 	width: 400px;
+	min-width: 300px;
 `;
 
 export const Title = styled.div`
